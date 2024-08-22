@@ -18,11 +18,12 @@ func main() {
 	app := fiber.New()
 
 	// Set up routes
-app.Use(cors.New(cors.Config{
-	AllowOrigins: "http://localhost:4000",
-	AllowMethods: "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
-
-}))
+	app.Use(cors.New(cors.Config{
+		AllowOrigins:     "http://localhost:3000", // Allow your frontend's origin
+		AllowMethods:     "GET, POST, HEAD, PUT, DELETE, PATCH, OPTIONS",
+		AllowHeaders:     "Origin, Content-Type, Accept, Authorization",
+		AllowCredentials: true, // Enable this if you are dealing with credentials (e.g., cookies, authorization headers)
+	}))
 
 	routes.Setup(app)
 
