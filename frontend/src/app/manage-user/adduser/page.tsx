@@ -10,7 +10,7 @@ function AddUsers() {
   const router = useRouter();
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault(); // Prevent default form submission behavior
+    event.preventDefault(); 
 
     if (!name || !email) {
       alert("Please add a name and email");
